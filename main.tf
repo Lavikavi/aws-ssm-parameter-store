@@ -5,6 +5,9 @@ resource "aws_ssm_parameter" "parameters" {
   type   = "String"
   key_id = "b5bf560a-8bf1-4778-b9b4-bcaf1686715a"
 }
+
+## Passwords are not at all meant to keep inside the code at all, Here since it is a lab we are doing it to save the time.
+## One of the scenario that mostly used in real way is , Enter the passwords manually in Parameter Store by someone for passwords.
 resource "aws_ssm_parameter" "passwords" {
   count  = length(var.passwords)
   name   = var.passwords[count.index].name
