@@ -5,3 +5,10 @@ resource "aws_ssm_parameter" "parameters" {
   type   = "String"
   key_id = "b5bf560a-8bf1-4778-b9b4-bcaf1686715a"
 }
+resource "aws_ssm_parameter" "passwords" {
+  count  = length(var.passwords)
+  name   = var.passwords[count.index].name
+  value  = var.passwords[count.index].value
+  type   = "SecureString"
+  key_id = "b5bf560a-8bf1-4778-b9b4-bcaf1686715a"
+}
