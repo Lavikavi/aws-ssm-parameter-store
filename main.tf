@@ -3,7 +3,7 @@ resource "aws_ssm_parameter" "parameters" {
   name   = var.parameters[count.index].name
   value  = var.parameters[count.index].value
   type   = "String"
-  key_id = "b5bf560a-8bf1-4778-b9b4-bcaf1686715a"
+  key_id = "b70d077e-755a-421f-a6ae-afbf0392276d"
 }
 
 ## Passwords are not at all meant to keep inside the code at all, Here since it is a lab we are doing it to save the time.
@@ -13,5 +13,5 @@ resource "aws_ssm_parameter" "passwords" {
   name   = var.passwords[count.index].name
   value  = var.passwords[count.index].value
   type   = "SecureString"
-  key_id = "b5bf560a-8bf1-4778-b9b4-bcaf1686715a"
+  key_id = "b70d077e-755a-421f-a6ae-afbf0392276d"
 }
